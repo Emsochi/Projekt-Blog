@@ -24,17 +24,17 @@ export default function CreatePost(){
     const [content, setContent] = useState('');
     const [files, setFiles] = useState('');
 
-    function createNewPost(ev){
+    async function createNewPost(ev){
       const data = new FormData();
         data.set('title', title);
         data.set('summary', summary);
         data.set('content', content);
         data.set('file', files[0]);
       ev.preventDefault();
-      fetch('http://localhost:3005/post',{
+      const response = await fetch('http://localhost:3005/post',{
         method: 'POST',
         body: data,
-      })
+      });
     }
 
     return(
