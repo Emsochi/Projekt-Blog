@@ -1,11 +1,20 @@
-import Post from "../Post"
+import { useEffect, useState } from "react";
+import Post from "../Post";
 
-export default function IndexPage(){
-    return(
-        <>
-        <Post/>
-        <Post/>
-        <Post/>
-        </>
-    )
+export default function IndexPage() {
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3005/post").then((response) => {
+      response.json().then((posts) => {
+        setPosts(posts);
+      });
+    });
+  }, []);
+  return (
+    <>
+      {posts.lenght > 0 && posts.map(post => (
+        <Post {...post} />
+      ))}
+    </>
+  );
 }
