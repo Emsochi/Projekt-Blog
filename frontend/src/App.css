@@ -11,6 +11,7 @@ body {
 
 img{
   max-width: 100%;
+  border-radius: 5px;
 }
 main{
   padding:10px;
@@ -20,25 +21,53 @@ main{
 
 header{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  position: relative;
   margin-top: 20px;
-  margin-bottom:50px;
+  margin-bottom:30px;
   align-items: center;
+  background-image: url('/Users/emiliasochiera/Desktop/GitHub/Projekt-w-asny/frontend/public/8881958.png');
+  background-size: 100% auto;
+  background-position: center; 
+  height: 150px; 
 } 
 
-header a {
-  text-decoration: none;
-  color: inherit;
-}
-
 header a.logo {
-  font-weight: bold;
-  font-size: 1.5rem;
+width: 100%;
+height: 100%;
 }
 
-header nav{
+nav {
   display: flex;
-  gap: 15px;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  margin-bottom:30px;
+  padding: 10px;
+}
+.menu-item {
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  margin-right: 20px; 
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s; 
+  background-color: 0.3s;
+}
+
+.menu-item:hover {
+  color:#685983; 
+}
+
+.menu-item:hover::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #685983; 
 }
 
 div.post{
@@ -84,13 +113,14 @@ div .post p.postSumamary{
 
 form.login, form.register{
   max-width: 400px;
-  margin: 0auto;
+  margin: 0 auto;
 }
 
 div.post-page div.image{
   max-height:200px;
   display:flex;
   overflow:hidden;
+  margin-bottom: 5px;
 }
 
 div.post-page div.image img{
@@ -118,7 +148,7 @@ div.post-page time{
 
 div.post-page div.author{
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 20px 5px;
   font-size: .7rem;
   font-weight: bold;
 }
@@ -133,7 +163,7 @@ div.edit-row{
 }
 
 div.post-page a.edit-btn{
-  background-color: #333;
+  background-color: #685983;
   display: inline-flex;
   align-items: center;
   gap: 5px;
@@ -160,7 +190,7 @@ button{
   cursor: pointer;
   width: 100%;
   display: block;
-  background-color: #555;
+  background-color: #685983;
   border:0;
   color: #fff;
   border-radius: 5px;
@@ -170,4 +200,50 @@ button{
 form.login h1, form.register h1{
   text-align: center;
 }
+
+.logout {
+position: absolute;
+right: 0;
+}
+
+.center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.email {
+  font-size: 16px;
+}
+
+.about-us {
+  margin-top: 20px; 
+  width: 80%;
+  text-align: justify;
+}
+
+.about-us-image{
+  width: 100px; 
+  height: auto; 
+  margin-right: 20px;
+}
+
+.start-page{
+  position: absolute;
+  right: 0;
+}
+
+.page{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 5px 5px
+}
+
 
