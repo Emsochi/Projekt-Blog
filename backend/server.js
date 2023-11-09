@@ -91,14 +91,25 @@ app.post("/post", uploadMiddleware.single("file"), async (req, res) => {
   });
 });
 
-//tu miała być paginacja
+const ITEMS_PER_PAGE = 5;
+
 app.get("/post/", async (req, res) => {
-  res.json(
-    await Post.find()
+  const page = parseInt(req.query.page) || 1;
+
+  try {
+    const totalPosts = await Post.countDocuments();
+    const totalPages = Math.ceil(totalPosts / ITEMS_PER_PAGE);
+
+    const posts = await Post.find()
       .populate("author", ["username"])
       .sort({ createdAt: -1 })
-      .limit(20) 
-  ); 
+      .skip((page - 1) * ITEMS_PER_PAGE)
+      .limit(ITEMS_PER_PAGE);
+
+    res.json({ posts, totalPages });
+  } catch (error) {
+    res.status(500).json({ error: "Internal Server Error" });
+  }
 });
 
 app.get("/post/:id", async (req, res) => {
