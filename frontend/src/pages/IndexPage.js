@@ -30,7 +30,7 @@ export default function IndexPage() {
         <Post key={post._id} {...post} />
       ))}
 
-      <div>
+      <div >
         <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
           Poprzednia
         </button>
