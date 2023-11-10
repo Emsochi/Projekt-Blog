@@ -1,9 +1,7 @@
 
-## Jak Uruchomić Projekt Lokalnie- Projekt Bloga Kosmetycznego - Backend
+## Projekt Bloga Kosmetycznego - Backend
 
-1. Klonowanie Repozytorium
-
-  Sklonuj to repozytorium na swój lokalny komputer
+1. Sprawdź czy masz sklonowane repozytorium
 
 2. Przejście do Katalogu Backend
 
@@ -23,4 +21,4 @@
 
 ##Gotowe!
 
-Twój serwer backendowy jest teraz uruchomiony lokalnie.
+Twój serwer backendowy jest teraz uruchomiony lokalnie i dostępny pod adresem http://localhost:3005.
